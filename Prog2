@@ -1,0 +1,173 @@
+public class Alumno extends Persona {
+
+
+    private double cuotaMensual;
+
+
+    public double getCuotaMensual() {
+        return cuotaMensual;
+    }
+
+    public void setCuotaMensual(double cuotaMensual) {
+        this.cuotaMensual = cuotaMensual;
+    }
+
+    @Override
+    public void imprimirNombreCompleto() {
+
+        System.out.println(getApellido() + " "+ getNombre()+" "+ getCuotaMensual());
+    }
+}
+
+public class Docente extends Persona{
+
+
+    private double sueldo;
+    private String tituloUniversitario;
+
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public String getTituloUniversitario() {
+        return tituloUniversitario;
+    }
+
+    public void setTituloUniversitario(String tituloUniversitario) {
+        this.tituloUniversitario = tituloUniversitario;
+    }
+
+
+    @Override
+    public void imprimirNombreCompleto()
+    {
+        System.out.println(getApellido() + " "+ getNombre()+" "+ getTituloUniversitario());
+    }
+
+}
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Alumno a1 = new Alumno();
+
+        a1.setNombre("Darius");
+        a1.setApellido("Con Ignite");
+        a1.setDni(1234);
+        a1.imprimirNombreCompleto();
+
+
+        Docente d1 = new Docente();
+
+        d1.setNombre("Garen");
+        d1.setApellido("topLaner");
+        d1.setDni(123456);
+        d1.setTituloUniversitario("Con ignite");
+        d1.setSueldo(1000.0);
+    }
+}
+
+public class Materia {
+
+
+    private String nombre;
+    private int añoCursado;
+    private int Cuatrimestre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getAñoCursado() {
+        return añoCursado;
+    }
+
+    public void setAñoCursado(int añoCursado) {
+        this.añoCursado = añoCursado;
+    }
+
+    public int getCuatrimestre() {
+        return Cuatrimestre;
+    }
+
+    public void setCuatrimestre(int cuatrimestre) {
+        Cuatrimestre = cuatrimestre;
+    }
+}
+
+public class NoDocente extends Persona {
+
+    private double sueldo;
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    @Override
+    public void imprimirNombreCompleto()
+    {
+        System.out.println(getApellido() + " "+ getNombre()+" "+ getSueldo());
+    }
+
+}
+
+public abstract class Persona {
+
+    private String apellido;
+    private String nombre;
+    private int dni;
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+
+    public abstract void imprimirNombreCompleto();
+
+
+
+    //@Override
+    //public String toString()
+    {
+      //  return "Nombre = "+nombre+" Apellido "+apellido+" DNI: "+dni;
+    }
+
+
+}
